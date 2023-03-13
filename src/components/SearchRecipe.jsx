@@ -5,8 +5,9 @@ import { data } from '../utils/data';
 import { RecipeItems } from './RecipeItems';
 
 export const SearchRecipe = ({ onClick }) => {
+  const recipes = data.hits;
   const [searchField, setSearchField] = useState('');
-  const matchRecipes = data.hits.filter((recipe) => {
+  const matchRecipes = recipes.filter((recipe) => {
     return recipe.recipe.label
       .toLowerCase()
       .includes(searchField.toLowerCase());
