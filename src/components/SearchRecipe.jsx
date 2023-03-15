@@ -1,21 +1,24 @@
 import { Box, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 import { SearchInput } from './ui/SearchInput';
-import { data } from '../utils/data';
 import { RecipeItems } from './RecipeItems';
+import { data } from '../utils/data';
 
 export const SearchRecipe = ({ onClick }) => {
-  const recipes = data.hits;
   const [searchField, setSearchField] = useState('');
-  const matchRecipes = recipes.filter((recipe) => {
-    return recipe.recipe.label
-      .toLowerCase()
-      .includes(searchField.toLowerCase());
+  const recipes = data.hits;
+  const recipe = recipes.map((recipe) => {
+    return recipe.recipe;
+  });
+
+  const matchRecipes = recipe.filter((recipe) => {
+    return recipe.label.toLowerCase().includes(searchField.toLowerCase());
   });
 
   const handleChange = (e) => {
     setSearchField(e.target.value);
   };
+
   return (
     <Box>
       <Text>Search for Recipe</Text>

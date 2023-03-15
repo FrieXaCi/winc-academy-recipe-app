@@ -13,11 +13,7 @@ export const RecipeItems = ({ recipes, onClick }) => {
       justifyContent='center'
     >
       {recipes.map((recipe) => (
-        <RecipeItem
-          onClick={onClick}
-          key={recipe.recipe.label}
-          recipe={recipe}
-        />
+        <RecipeItem onClick={onClick} key={recipe.label} recipe={recipe} />
       ))}
     </Flex>
   );

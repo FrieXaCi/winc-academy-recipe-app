@@ -1,6 +1,9 @@
 import { Box, Image, Text, Heading, Flex } from '@chakra-ui/react';
 
 export const RecipeItem = ({ recipe, onClick }) => {
+  // console.log(recipe);
+  const filterVegan = recipe.healthLabels.includes('Vegan');
+
   return (
     <Flex
       onClick={() => onClick(recipe)}
@@ -21,27 +24,24 @@ export const RecipeItem = ({ recipe, onClick }) => {
           w='100%'
           pb='10px'
           borderTopRadius='25px'
-          src={recipe.recipe.image}
+          src={recipe.image}
           alt='recipe'
         />
       </Box>
       <Heading fontSize='sm' p='5px' textAlign='center' onClick={onClick}>
-        {recipe.recipe.label}
+        {recipe.label}
       </Heading>
       <Text fontSize='sm' color='black'>
-        {recipe.recipe.dishType}
+        {recipe.dishType}
       </Text>
       <Text fontSize='sm' color='black'>
-        {recipe.recipe.mealType}
+        {recipe.mealType}
       </Text>
       <Text fontSize='sm' color='black'>
-        {recipe.recipe.cautions}
+        {recipe.cautions}
       </Text>
       <Text fontSize='sm' color='black'>
-        {recipe.recipe.dietLabels}
-      </Text>
-      <Text fontSize='sm' color='black'>
-        {recipe.recipe.healthLabels}
+        {recipe.dietLabels}
       </Text>
     </Flex>
   );
