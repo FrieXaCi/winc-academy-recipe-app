@@ -8,9 +8,10 @@ export const RecipeItem = ({ recipe, onClick }) => {
 
   return (
     <Flex
+      align='center'
       onClick={() => onClick(recipe)}
       as='button'
-      h='380px'
+      h='400px'
       w='280px'
       alignItems='center'
       justifyContent='start'

@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
 import { useState } from 'react';
 import { SearchInput } from './ui/SearchInput';
 import { RecipeItems } from './RecipeItems';
@@ -35,11 +35,19 @@ export const SearchRecipe = ({ onClick }) => {
   });
 
   return (
-    <Box>
-      <Text>Search for Recipe</Text>
+    <Flex direction='column' alignItems='center'>
+      <Heading
+        w='100%'
+        h='50px'
+        fontSize={{ base: '1rem', md: '1.5rem', lg: '3rem' }}
+        textAlign='center'
+        color='yellow.400'
+      >
+        Search for Recipe
+      </Heading>
       <SearchInput onChange={(e) => setSearchField(e.target.value)} />
       <RadioButton value={recipeFilter} onChange={handleFilter} />
       <RecipeItems onClick={onClick} recipes={matchRecipes} />
-    </Box>
+    </Flex>
   );
 };
