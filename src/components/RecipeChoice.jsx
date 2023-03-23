@@ -1,6 +1,6 @@
 import { Heading, Image, Box, Flex } from '@chakra-ui/react';
 
-export const RecipeChoice = ({ recipe }) => {
+export const RecipeChoice = ({ recipe, onClick }) => {
   return (
     <Flex direction='column' p='10'>
       <Heading size='sm'> You choose {recipe.label}!</Heading>

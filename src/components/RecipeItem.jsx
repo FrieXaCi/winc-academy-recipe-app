@@ -2,7 +2,6 @@ import { Box, Image, Text, Heading, Flex } from '@chakra-ui/react';
 
 export const RecipeItem = ({ recipe, onClick }) => {
   // console.log(recipe);
-  const filterVegan = recipe.healthLabels.includes('Vegan');
 
   return (
     <Flex

@@ -11,12 +11,11 @@ export const RecipesPage = () => {
   return (
     <Center h='100%' flexDir='column'>
       {userRecipe ? (
-        <RecipeChoice recipe={userRecipe} />
+        <RecipeChoice recipe={userRecipe} onClick={setUserRecipe} />
       ) : (
         <>
           <Heading>Winc Recipe App</Heading>
           <Text>{greeting}</Text>
-
           <SearchRecipe onClick={setUserRecipe} />
           <FilterRecipes onClick={setUserRecipe} />
         </>
