@@ -14,6 +14,7 @@ export const FilterRecipes = ({ onClick }) => {
     const veggie = filters.filter((filter) => {
       return filter.healthLabels.includes('Vegetarian');
     });
+
     setFilterRecipes(veggie);
   };
   const filterVegan = () => {

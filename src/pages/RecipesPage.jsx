@@ -9,15 +9,15 @@ export const RecipesPage = () => {
   const [userRecipe, setUserRecipe] = useState('');
 
   return (
-    <Center h='100%' flexDir='column'>
+    <Center h='100%' flexDir='column' bgGradient='linear(to-l, black, white)'>
       {userRecipe ? (
         <RecipeChoice recipe={userRecipe} onClick={setUserRecipe} />
       ) : (
         <>
           <Heading>Winc Recipe App</Heading>
           <Text>{greeting}</Text>
-          <SearchRecipe onClick={setUserRecipe} />
           <FilterRecipes onClick={setUserRecipe} />
+          <SearchRecipe onClick={setUserRecipe} />
         </>
       )}
     </Center>
