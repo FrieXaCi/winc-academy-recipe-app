@@ -2,6 +2,9 @@ import { Box, Image, Text, Heading, Flex } from '@chakra-ui/react';
 
 export const RecipeItem = ({ recipe, onClick }) => {
   // console.log(recipe);
+  const labels = recipe.healthLabels.filter(
+    (label) => label === 'Vegetarian' || label === 'Vegan'
+  );
 
   return (
     <Flex
@@ -41,6 +44,9 @@ export const RecipeItem = ({ recipe, onClick }) => {
       </Text>
       <Text fontSize='sm' color='black'>
         {recipe.dietLabels}
+      </Text>
+      <Text fontSize='sm' color='black'>
+        {labels}
       </Text>
     </Flex>
   );
