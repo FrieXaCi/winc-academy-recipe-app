@@ -1,7 +1,6 @@
 import { Box, Image, Text, Heading, Flex } from '@chakra-ui/react';
 
 export const RecipeItem = ({ recipe, onClick }) => {
-  // console.log(recipe);
   const labels = recipe.healthLabels.filter(
     (label) => label === 'Vegetarian' || label === 'Vegan'
   );
@@ -19,7 +18,9 @@ export const RecipeItem = ({ recipe, onClick }) => {
       gap='5px'
       boxShadow='dark-lg'
       borderRadius='25px'
-      bg='yellow.300'
+      bgGradient='linear(to-b, yellow.100, orange.600)'
+      color='orange.900'
+      textAlign='center'
     >
       <Box h='200px' w='100%'>
         <Image
@@ -31,23 +32,27 @@ export const RecipeItem = ({ recipe, onClick }) => {
           alt='recipe'
         />
       </Box>
-      <Heading fontSize='sm' p='5px' textAlign='center' onClick={onClick}>
-        {recipe.label}
-      </Heading>
-      <Text fontSize='sm' color='black'>
-        {recipe.dishType}
-      </Text>
       <Text fontSize='sm' color='black'>
         {recipe.mealType}
       </Text>
+      <Heading fontSize='1rem' p='5px' textAlign='center' onClick={onClick}>
+        {recipe.label}
+      </Heading>
+      <Text fontSize='md'>{recipe.dishType}</Text>
+      <Text
+        fontSize='md'
+        fontWeight='semibold'
+        color='green.600'
+        flexWrap='wrap'
+      >
+        {labels}
+      </Text>
+      ;
       <Text fontSize='sm' color='black'>
         {recipe.cautions}
       </Text>
       <Text fontSize='sm' color='black'>
         {recipe.dietLabels}
-      </Text>
-      <Text fontSize='sm' color='black'>
-        {labels}
       </Text>
     </Flex>
   );
