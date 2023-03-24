@@ -37,13 +37,15 @@ export const SearchRecipe = ({ onClick }) => {
   return (
     <Flex direction='column' alignItems='center'>
       <Heading
+        as='i'
         w='100%'
         h='50px'
         fontSize={{ base: '1rem', md: '1.5rem', lg: '3rem' }}
         textAlign='center'
         color='yellow.400'
+        textShadow='3px 3px black'
       >
-        Search for Recipe
+        Search for Recipes
       </Heading>
       <SearchInput onChange={(e) => setSearchField(e.target.value)} />
       <RadioButton value={recipeFilter} onChange={handleFilter} />

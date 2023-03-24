@@ -11,7 +11,10 @@ export const RecipesPage = () => {
     <Center
       h='100%'
       flexDir='column'
-      bgGradient='linear(to-l, orange.700 , yellow.700)'
+      bgImage="url('src/assets/recipe-images/bg-body-pexels-engin-akyurt-1435895.jpg')"
+      bgPosition='top'
+      bgRepeat='no-repeat'
+      bgSize='cover'
     >
       {userRecipe ? (
         <RecipeChoice recipe={userRecipe} onClick={setUserRecipe} />
@@ -21,17 +24,17 @@ export const RecipesPage = () => {
             width='100%'
             h='250px'
             mb='10px'
-            bgImage="url('src/assets/recipe-images/bg-header-pexels-anna-guerrero-1956974.jpg')"
-            bgPosition='center'
+            bgPosition='top'
             bgRepeat='no-repeat'
             bgSize='cover'
             textAlign='center'
             fontSize={{ base: '3rem', md: '6rem', lg: '9rem' }}
             color='yellow.400'
-            textShadow='2px 2px black'
+            textShadow='3px 3px black'
           >
             {greeting}
           </Heading>
+
           <SearchRecipe onClick={setUserRecipe} />
         </>
       )}

@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom/client';
 import { RecipesPage } from './pages/RecipesPage';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-	<React.StrictMode>
-		<ChakraProvider>
-			<RecipesPage />
-		</ChakraProvider>
-	</React.StrictMode>,
+  <React.StrictMode>
+    <ChakraProvider>
+      <RecipesPage />
+    </ChakraProvider>
+  </React.StrictMode>
 );
