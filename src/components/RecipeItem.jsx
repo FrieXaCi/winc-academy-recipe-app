@@ -1,6 +1,18 @@
-import { Box, Image, Text, Heading, Flex } from '@chakra-ui/react';
+import {
+  Box,
+  Image,
+  Text,
+  Heading,
+  Card,
+  CardHeader,
+  CardBody,
+} from '@chakra-ui/react';
+import { DietLabels } from './Labels/DietLabels';
+import { Cautions } from './Labels/Cautions';
 
 export const RecipeItem = ({ recipe, onClick }) => {
+  // show vega options
+  //
   const VegaLabels = () => {
     if (recipe.healthLabels.includes('Vegan')) {
       return 'Vegan';
@@ -11,11 +23,11 @@ export const RecipeItem = ({ recipe, onClick }) => {
   };
 
   return (
-    <Flex
+    <Card
       align='center'
       onClick={() => onClick(recipe)}
       as='button'
-      h='400px'
+      h='500px'
       w='280px'
       alignItems='center'
       justifyContent='start'
@@ -27,38 +39,42 @@ export const RecipeItem = ({ recipe, onClick }) => {
       color='orange.900'
       textAlign='center'
     >
-      <Box h='200px' w='100%'>
-        <Image
-          h='100%'
-          w='100%'
-          pb='10px'
-          borderTopRadius='25px'
-          src={recipe.image}
-          alt='recipe'
-        />
-      </Box>
-      <Text fontSize='sm' color='black'>
-        {recipe.mealType}
-      </Text>
-      <Heading fontSize='1rem' p='5px' textAlign='center' onClick={onClick}>
-        {recipe.label}
-      </Heading>
-      <Text fontSize='md'>{recipe.dishType}</Text>
-      <Text
-        fontSize='md'
-        fontWeight='semibold'
-        color='green.600'
-        flexWrap='wrap'
-      >
-        {VegaLabels()}
-      </Text>
-      ;
-      <Text fontSize='sm' color='black'>
-        {recipe.cautions}
-      </Text>
-      <Text fontSize='sm' color='black'>
-        {recipe.dietLabels}
-      </Text>
-    </Flex>
+      <CardHeader>
+        <Box h='200px' w='100%'>
+          <Image
+            h='100%'
+            w='100%'
+            pb='10px'
+            borderTopRadius='25px'
+            src={recipe.image}
+            alt='recipe'
+          />
+        </Box>
+        <Text fontSize='sm' color='black'>
+          {recipe.mealType}
+        </Text>
+        <Heading fontSize='1rem' p='5px' textAlign='center' onClick={onClick}>
+          {recipe.label}
+        </Heading>
+        <Text fontSize='md'>{recipe.dishType}</Text>
+        <Text
+          fontSize='md'
+          fontWeight='semibold'
+          color='green.600'
+          flexWrap='wrap'
+        >
+          {VegaLabels()}
+        </Text>
+      </CardHeader>
+
+      <CardBody>
+        Dietlabels:
+        <DietLabels recipe={recipe} />
+        <Box>
+          Cautions:
+          <Cautions recipe={recipe} />
+        </Box>
+      </CardBody>
+    </Card>
   );
 };

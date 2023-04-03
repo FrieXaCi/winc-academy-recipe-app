@@ -1,19 +1,13 @@
 import { Heading, Image, Box, Flex, IconButton, Text } from '@chakra-ui/react';
 import { ArrowLeftIcon } from '@chakra-ui/icons';
+import { DietLabels } from './Labels/DietLabels';
+import { Cautions } from './Labels/Cautions';
+import { Ingredients } from './Labels/Ingredients';
+import { Nutrients } from './Labels/Nutrients';
 
 export const RecipeChoice = ({ recipe, onClick }) => {
-  const energy = recipe.totalNutrients.ENERC_KCAL;
-  const fat = recipe.totalNutrients.FAT;
-  const carbs = recipe.totalNutrients.CHOCDF;
-  const protein = recipe.totalNutrients.PROCNT;
-  const cholesterol = recipe.totalNutrients.CHOLE;
-  const sodium = recipe.totalNutrients.NA;
-
-  //create array of nutrients so we can map them
-  const nutrients = [energy, fat, carbs, protein, cholesterol, sodium];
-
   return (
-    <Flex direction='column' p='10'>
+    <Flex direction='column' p='10' bg='yellow.400'>
       <Box>
         <IconButton
           variant={'ghost'}
@@ -36,33 +30,38 @@ export const RecipeChoice = ({ recipe, onClick }) => {
         />
       </Box>
       <Text fontSize='sm' color='black'>
-        {recipe.mealType}
+        mealtype: {recipe.mealType}
       </Text>
       <Text fontSize='sm' color='black'>
-        {recipe.dishType}
+        dishtype: {recipe.dishType}
       </Text>
       <Text fontSize='sm' color='black'>
-        {recipe.totalTime}
+        Total cookingtime {recipe.totalTime}
       </Text>
       <Text fontSize='sm' color='black'>
-        {recipe.yield}
+        {recipe.yield} person
       </Text>
-      <Text fontSize='sm' color='black'>
-        {recipe.dietLabels}
-      </Text>
-      <Text fontSize='sm' color='black'>
-        {recipe.cautions}
-      </Text>
-      <Text fontSize='sm' color='black'>
-        {recipe.ingredientLines}
-      </Text>
-      {nutrients.map((nutrient) => (
-        <Flex direction='column' key={nutrient.label}>
-          <Text>{nutrient.label}</Text>
-          <Text>{nutrient.quantity}</Text>
-          <Text>{nutrient.unit}</Text>
+      <Box mt={5}>
+        Dietlabels:
+        <Flex direction='row' flexWrap='wrap' gap={2}>
+          <DietLabels recipe={recipe} />
         </Flex>
-      ))}
+      </Box>
+      <Box mt={5}>
+        Cautions:
+        <Flex direction='row' flexWrap='wrap' gap={2}>
+          <Cautions recipe={recipe} />
+        </Flex>
+      </Box>
+      <Box mt={5}>
+        Ingredients:
+        <Flex direction='column' flexWrap='wrap' gap={1}>
+          <Ingredients recipe={recipe} />
+        </Flex>
+      </Box>
+      <Flex>
+        <Nutrients recipe={recipe} />
+      </Flex>
     </Flex>
   );
 };

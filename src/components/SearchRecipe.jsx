@@ -4,7 +4,9 @@ import { SearchInput } from './ui/SearchInput';
 import { RecipeItems } from './RecipeItems';
 import { RadioButton } from './ui/RadioButton';
 import { data } from '../utils/data';
+
 const recipes = data.hits;
+
 export const SearchRecipe = ({ onClick }) => {
   // search recipes
   const [searchField, setSearchField] = useState('');
