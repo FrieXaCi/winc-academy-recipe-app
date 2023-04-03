@@ -1,9 +1,14 @@
 import { Box, Image, Text, Heading, Flex } from '@chakra-ui/react';
 
 export const RecipeItem = ({ recipe, onClick }) => {
-  const labels = recipe.healthLabels.filter(
-    (label) => label === 'Vegetarian' || label === 'Vegan'
-  );
+  const VegaLabels = () => {
+    if (recipe.healthLabels.includes('Vegan')) {
+      return 'Vegan';
+    }
+    if (recipe.healthLabels.includes('Vegetarian')) {
+      return 'Vegetarian';
+    } else return '';
+  };
 
   return (
     <Flex
@@ -45,7 +50,7 @@ export const RecipeItem = ({ recipe, onClick }) => {
         color='green.600'
         flexWrap='wrap'
       >
-        {labels}
+        {VegaLabels()}
       </Text>
       ;
       <Text fontSize='sm' color='black'>
