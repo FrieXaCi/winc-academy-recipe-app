@@ -4,6 +4,7 @@ import { DietLabels } from './Labels/DietLabels';
 import { Cautions } from './Labels/Cautions';
 import { Ingredients } from './Labels/Ingredients';
 import { Nutrients } from './Labels/Nutrients';
+import { HealthLabels } from './Labels/HealthLabels';
 
 export const RecipeChoice = ({ recipe, onClick }) => {
   return (
@@ -45,6 +46,12 @@ export const RecipeChoice = ({ recipe, onClick }) => {
         Dietlabels:
         <Flex direction='row' flexWrap='wrap' gap={2}>
           <DietLabels recipe={recipe} />
+        </Flex>
+      </Box>
+      <Box mt={5}>
+        Healthlabels:
+        <Flex direction='row' flexWrap='wrap' gap={2}>
+          <HealthLabels recipe={recipe} />
         </Flex>
       </Box>
       <Box mt={5}>
