@@ -3,15 +3,17 @@ import { Radio, RadioGroup, Stack, Text } from '@chakra-ui/react';
 export const RadioButton = ({ value, onChange }) => {
   return (
     <RadioGroup
+      align='center'
+      justify='center'
       value={value}
       m='0 auto'
-      w={{ base: '90%', md: '70%', lg: '80%' }}
+      w={{ base: '90%', sm: '70%', md: '70%', lg: '50%' }}
     >
       <Stack
         p={{ base: '3px', md: '10px', lg: '20px' }}
         direction='row'
-        w={{ base: '100%', md: '70%', lg: '90%' }}
-        h={{ base: '20px', md: '35px', lg: '50px' }}
+        h={{ base: '20px', md: '35px', lg: '40px' }}
+        align='center'
         justify='center'
         bgGradient='linear(to-b, yellow.100, orange.600)'
         borderRadius='10px'

@@ -37,7 +37,7 @@ export const RecipeChoice = ({ recipe, onClick }) => {
       <Heading size='lg' mb='3rem'>
         {recipe.label}!
       </Heading>
-      <Flex gap={5}>
+      <Flex gap={5} flexWrap='wrap'>
         <Box h='200px' w='400px'>
           <Image
             h='100%'

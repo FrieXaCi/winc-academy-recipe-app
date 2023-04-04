@@ -48,15 +48,47 @@ export const RecipeItem = ({ recipe, onClick }) => {
         />
       </Box>
       <CardHeader>
-        <Text fontSize='sm' color='black'>
+        <Text
+          fontSize={{
+            base: '0.9rem',
+            sm: '1rem',
+            md: '1.1rem',
+            lg: '1.3rem',
+          }}
+          color='orange.900'
+        >
           {recipe.mealType}
         </Text>
-        <Heading fontSize='1rem' p='5px' textAlign='center' onClick={onClick}>
+        <Heading
+          fontSize={{
+            base: '0.8rem',
+            sm: '0.9rem',
+            md: '1rem',
+            lg: '1.1rem',
+          }}
+          p='5px'
+          textAlign='center'
+          onClick={onClick}
+        >
           {recipe.label}
         </Heading>
-        <Text fontSize='md'>{recipe.dishType}</Text>
         <Text
-          fontSize='md'
+          fontSize={{
+            base: '0.9rem',
+            sm: '1rem',
+            md: '1.1rem',
+            lg: '1.3rem',
+          }}
+        >
+          {recipe.dishType}
+        </Text>
+        <Text
+          fontSize={{
+            base: '0.9rem',
+            sm: '1rem',
+            md: '1.1rem',
+            lg: '1.3rem',
+          }}
           fontWeight='semibold'
           color='green.600'
           flexWrap='wrap'
@@ -67,11 +99,31 @@ export const RecipeItem = ({ recipe, onClick }) => {
 
       <CardBody mt='1rem'>
         <Box>
-          Dietlabels:
+          <Text
+            fontSize={{
+              base: '0.9rem',
+              sm: '1rem',
+              md: '1.1rem',
+              lg: '1.3rem',
+            }}
+          >
+            Dietlabels:
+          </Text>
+
           <DietLabels recipe={recipe} />
         </Box>
         <Box>
-          Cautions:
+          <Text
+            fontSize={{
+              base: '0.9rem',
+              sm: '1rem',
+              md: '1.1rem',
+              lg: '1.3rem',
+            }}
+          >
+            Cautions:
+          </Text>
+
           <Cautions recipe={recipe} />
         </Box>
       </CardBody>

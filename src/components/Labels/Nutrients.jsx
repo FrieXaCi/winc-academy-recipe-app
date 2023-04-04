@@ -32,7 +32,19 @@ export const Nutrients = ({ recipe }) => {
   });
 
   return (
-    <Flex direction='row' gap={1} align='center' m='0 auto'>
+    <Flex
+      direction='row'
+      flexWrap='wrap'
+      gap={1}
+      align='center'
+      m='0 auto'
+      fontSize={{
+        base: '0.9rem',
+        sm: '1rem',
+        md: '1.1rem',
+        lg: '1.3rem',
+      }}
+    >
       <Flex direction='column' gap={1} m='1rem'>
         <Text as='b'>{energy[0].label}:</Text>
         <Text as='i'> {Math.round(energy[0].quantity)} kcal</Text>

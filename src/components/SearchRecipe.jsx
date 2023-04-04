@@ -37,7 +37,7 @@ export const SearchRecipe = ({ onClick }) => {
   });
 
   return (
-    <Flex direction='column' alignItems='center'>
+    <Flex direction='column' alignItems='center' justify='center' w='100%'>
       <Heading
         as='i'
         w='100%'
@@ -50,12 +50,13 @@ export const SearchRecipe = ({ onClick }) => {
         Search for Recipes
       </Heading>
       <Flex
-        direction={{ base: 'column', md: 'column', lg: 'row' }}
-        alignItems='flex-start'
+        direction='column'
+        alignItems='center'
         justify='center'
         gap={3}
         w='85%'
         mt='2rem'
+        boxSizing='borderbox'
       >
         <RadioButton value={recipeFilter} onChange={handleFilter} />
         <SearchInput onChange={(e) => setSearchField(e.target.value)} />
