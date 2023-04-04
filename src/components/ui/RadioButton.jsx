@@ -1,33 +1,82 @@
-import { Radio, RadioGroup, Stack } from '@chakra-ui/react';
+import { Radio, RadioGroup, Stack, Text } from '@chakra-ui/react';
 
 export const RadioButton = ({ value, onChange }) => {
   return (
-    <RadioGroup value={value} m='0 auto' w='70%'>
+    <RadioGroup
+      value={value}
+      m='0 auto'
+      w={{ base: '90%', md: '70%', lg: '80%' }}
+    >
       <Stack
-        spacing={10}
-        p='20px'
+        p={{ base: '3px', md: '10px', lg: '20px' }}
         direction='row'
-        w='100%'
-        h='50px'
-        fontSize={{ base: '1rem', md: '1.5rem', lg: '3rem' }}
+        w={{ base: '100%', md: '70%', lg: '90%' }}
+        h={{ base: '20px', md: '35px', lg: '50px' }}
         justify='center'
-        color='orange.600'
-        textShadow='1px 1px black'
         bgGradient='linear(to-b, yellow.100, orange.600)'
         borderRadius='10px'
         boxShadow='3px,3px,black'
+        gap={3}
       >
-        <Radio value='all' onChange={onChange}>
-          All recipes
+        <Radio
+          value='all'
+          onChange={onChange}
+          spacing={1}
+          size={{ base: 'xs', md: 'sm', lg: 'sm' }}
+        >
+          <Text
+            fontSize={{ base: '0.7rem', md: '1rem', lg: '1.5rem' }}
+            fontWeight='300'
+            color='orange.600'
+            textShadow='1px 1px black'
+          >
+            All
+          </Text>
         </Radio>
-        <Radio value='pescatarian' onChange={onChange}>
-          Pescatarian recipes
+        <Radio
+          value='pescatarian'
+          onChange={onChange}
+          spacing={1}
+          size={{ base: 'xs', md: 'sm', lg: 'sm' }}
+        >
+          <Text
+            fontSize={{ base: '0.7rem', md: '1rem', lg: '1.5rem' }}
+            fontWeight='300'
+            color='orange.600'
+            textShadow='1px 1px black'
+          >
+            Pescatarian
+          </Text>
         </Radio>
-        <Radio value='vegetarian' onChange={onChange}>
-          Vegetarian recipes
+        <Radio
+          value='vegetarian'
+          onChange={onChange}
+          spacing={1}
+          size={{ base: 'xs', md: 'sm', lg: 'sm' }}
+        >
+          <Text
+            fontSize={{ base: '0.7rem', md: '1rem', lg: '1.5rem' }}
+            fontWeight='200'
+            color='orange.600'
+            textShadow='1px 1px black'
+          >
+            Vegetarian
+          </Text>
         </Radio>
-        <Radio value='vegan' onChange={onChange}>
-          Vegan recipes
+        <Radio
+          value='vegan'
+          onChange={onChange}
+          spacing={1}
+          size={{ base: 'xs', md: 'sm', lg: 'sm' }}
+        >
+          <Text
+            fontSize={{ base: '0.7rem', md: '1rem', lg: '1.5rem' }}
+            fontWeight='300'
+            color='orange.600'
+            textShadow='1px 1px black'
+          >
+            Vegan
+          </Text>
         </Radio>
       </Stack>
     </RadioGroup>

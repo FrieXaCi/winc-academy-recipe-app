@@ -31,24 +31,23 @@ export const RecipeItem = ({ recipe, onClick }) => {
       alignItems='center'
       justifyContent='start'
       direction='column'
-      gap='5px'
       boxShadow='dark-lg'
       borderRadius='25px'
       bgGradient='linear(to-b, yellow.100, orange.600)'
       color='orange.900'
       textAlign='center'
     >
+      <Box h='200px' w='100%'>
+        <Image
+          h='100%'
+          w='100%'
+          pb='10px'
+          borderTopRadius='25px'
+          src={recipe.image}
+          alt='recipe'
+        />
+      </Box>
       <CardHeader>
-        <Box h='200px' w='100%'>
-          <Image
-            h='100%'
-            w='100%'
-            pb='10px'
-            borderTopRadius='25px'
-            src={recipe.image}
-            alt='recipe'
-          />
-        </Box>
         <Text fontSize='sm' color='black'>
           {recipe.mealType}
         </Text>

@@ -49,7 +49,14 @@ export const SearchRecipe = ({ onClick }) => {
       >
         Search for Recipes
       </Heading>
-      <Flex alignItems='flex-start' justify='center' gap={3} w='85%' mt='2rem'>
+      <Flex
+        direction={{ base: 'column', md: 'column', lg: 'row' }}
+        alignItems='flex-start'
+        justify='center'
+        gap={3}
+        w='85%'
+        mt='2rem'
+      >
         <RadioButton value={recipeFilter} onChange={handleFilter} />
         <SearchInput onChange={(e) => setSearchField(e.target.value)} />
       </Flex>
