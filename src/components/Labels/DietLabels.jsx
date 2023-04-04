@@ -6,7 +6,7 @@ export const DietLabels = ({ recipe }) => {
 
   return dietLabels.map((dietLabel) => {
     return (
-      <Text color='blue.600' key={uuid()}>
+      <Text color='green.600' fontWeight='semibold' key={uuid()}>
         {dietLabel}
       </Text>
     );

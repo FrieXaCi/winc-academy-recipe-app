@@ -6,7 +6,7 @@ export const Cautions = ({ recipe }) => {
 
   return Cautions.map((caution) => {
     return (
-      <Text color='blue.600' key={uuid()}>
+      <Text color='red.600' fontWeight='semibold' key={uuid()}>
         {caution}
       </Text>
     );

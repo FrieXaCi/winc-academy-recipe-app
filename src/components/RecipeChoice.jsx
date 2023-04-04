@@ -17,14 +17,16 @@ export const RecipeChoice = ({ recipe, onClick }) => {
       borderRadius='25px'
       bgGradient='linear(to-b, yellow.100, orange.600)'
       color='orange.900'
+      opacity='0.9'
       textAlign='center'
     >
       <Box position='relative'>
         <IconButton
           variant={'ghost'}
-          pos='absolute'
+          textAlign='left'
+          /*  pos='absolute'
           top='0'
-          left='0'
+          left='0' */
           color='blue.500'
           icon={<ArrowLeftIcon />}
           _hover={{ bg: 'black', color: 'white' }}
@@ -51,46 +53,65 @@ export const RecipeChoice = ({ recipe, onClick }) => {
             <Text as='b' fontSize='sm' color='black'>
               Mealtype:
             </Text>
-            <Text as='i'>{recipe.mealType}</Text>
+            <Text as='i' fontWeight='semibold'>
+              {recipe.mealType}
+            </Text>
           </Flex>
           <Flex gap={3}>
             <Text as='b' fontSize='sm' color='black'>
               Dish:
             </Text>
-            <Text as='i'>{recipe.dishType}</Text>
+            <Text as='i' fontWeight='semibold'>
+              {recipe.dishType}
+            </Text>
           </Flex>
           <Flex gap={3}>
             <Text as='b' fontSize='sm' color='black'>
               Total cooking time is:
             </Text>
-            <Text as='i'>{recipe.totalTime} minutes</Text>
+            <Text as='i' fontWeight='semibold'>
+              {recipe.totalTime} minutes
+            </Text>
           </Flex>
           <Flex gap={3}>
             <Text as='b' fontSize='sm' color='black'>
               persons:
             </Text>
-            <Text as='i'>{recipe.yield} person</Text>
+            <Text as='i' fontWeight='semibold'>
+              {recipe.yield} person
+            </Text>
+          </Flex>
+        </Flex>
+        <Flex
+          direction='column'
+          flexWrap='wrap'
+          gap={2}
+          align='flexStart'
+          ml='3rem'
+        >
+          <Flex direction='row' flexWrap='wrap' gap={2}>
+            <Text as='b'>Dietlabels:</Text>
+            <Text as='i'>
+              <DietLabels recipe={recipe} />
+            </Text>
+          </Flex>
+
+          <Flex direction='row' flexWrap='wrap' gap={2}>
+            <Text as='b'>Cautions:</Text>
+            <Text as='i'>
+              <Cautions recipe={recipe} />
+            </Text>
           </Flex>
         </Flex>
       </Flex>
-      <Box mt={5}>
-        Dietlabels:
-        <Flex direction='row' flexWrap='wrap' gap={2}>
-          <DietLabels recipe={recipe} />
-        </Flex>
-      </Box>
+
       <Box mt={5}>
         Healthlabels:
         <Flex direction='row' flexWrap='wrap' gap={2}>
           <HealthLabels recipe={recipe} />
         </Flex>
       </Box>
-      <Box mt={5}>
-        Cautions:
-        <Flex direction='row' flexWrap='wrap' gap={2}>
-          <Cautions recipe={recipe} />
-        </Flex>
-      </Box>
+
       <Box mt={5}>
         Ingredients:
         <Flex direction='column' flexWrap='wrap' gap={1}>

@@ -2,6 +2,7 @@ import { Center, Heading } from '@chakra-ui/react';
 import { useState } from 'react';
 import { RecipeChoice } from '../components/RecipeChoice';
 import { SearchRecipe } from '../components/SearchRecipe';
+import { useMediaQuery } from '@chakra-ui/react';
 
 export const RecipesPage = () => {
   const greeting = 'Winc Recipe App';
@@ -9,9 +10,10 @@ export const RecipesPage = () => {
 
   return (
     <Center
+      w='100%'
       h='100%'
       flexDir='column'
-      bgImage="url('src/assets/recipe-images/bg-body-pexels-engin-akyurt-1435895.jpg')"
+      bgImage="url('src/assets/recipe-images/background_table-_with_food.jpeg')"
       bgPosition='top'
       bgRepeat='no-repeat'
       bgSize='cover'

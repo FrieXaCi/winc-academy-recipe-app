@@ -11,8 +11,7 @@ import { DietLabels } from './Labels/DietLabels';
 import { Cautions } from './Labels/Cautions';
 
 export const RecipeItem = ({ recipe, onClick }) => {
-  // show vega options
-  //
+  // function to show vega options
   const VegaLabels = () => {
     if (recipe.healthLabels.includes('Vegan')) {
       return 'Vegan';
@@ -67,9 +66,11 @@ export const RecipeItem = ({ recipe, onClick }) => {
         </Text>
       </CardHeader>
 
-      <CardBody>
-        Dietlabels:
-        <DietLabels recipe={recipe} />
+      <CardBody mt='1rem'>
+        <Box>
+          Dietlabels:
+          <DietLabels recipe={recipe} />
+        </Box>
         <Box>
           Cautions:
           <Cautions recipe={recipe} />
