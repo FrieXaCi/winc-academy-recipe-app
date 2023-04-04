@@ -49,8 +49,10 @@ export const SearchRecipe = ({ onClick }) => {
       >
         Search for Recipes
       </Heading>
-      <SearchInput onChange={(e) => setSearchField(e.target.value)} />
-      <RadioButton value={recipeFilter} onChange={handleFilter} />
+      <Flex alignItems='flex-start' justify='center' gap={3} w='85%' mt='2rem'>
+        <RadioButton value={recipeFilter} onChange={handleFilter} />
+        <SearchInput onChange={(e) => setSearchField(e.target.value)} />
+      </Flex>
       <RecipeItems onClick={onClick} recipes={matchRecipes} />
     </Flex>
   );

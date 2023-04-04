@@ -1,17 +1,8 @@
-import { Radio, RadioGroup, Stack, Heading } from '@chakra-ui/react';
+import { Radio, RadioGroup, Stack } from '@chakra-ui/react';
 
 export const RadioButton = ({ value, onChange }) => {
   return (
-    <RadioGroup value={value} mt='10px'>
-      <Heading
-        textAlign='center'
-        p='5px'
-        fontSize={{ base: '0.5rem', md: '1rem', lg: '2rem' }}
-        color='yellow.400'
-        textShadow='3px 3px black'
-      >
-        Select recipes
-      </Heading>
+    <RadioGroup value={value} m='0 auto' w='70%'>
       <Stack
         spacing={10}
         p='20px'
@@ -19,20 +10,14 @@ export const RadioButton = ({ value, onChange }) => {
         w='100%'
         h='50px'
         fontSize={{ base: '1rem', md: '1.5rem', lg: '3rem' }}
-        textAlign='center'
+        justify='center'
         color='orange.600'
         textShadow='1px 1px black'
         bgGradient='linear(to-b, yellow.100, orange.600)'
         borderRadius='10px'
         boxShadow='3px,3px,black'
       >
-        <Radio
-          value='all'
-          onChange={onChange}
-          p='5px'
-          bgColor='yellow.700'
-          color='orange.700'
-        >
+        <Radio value='all' onChange={onChange}>
           All recipes
         </Radio>
         <Radio value='pescatarian' onChange={onChange}>

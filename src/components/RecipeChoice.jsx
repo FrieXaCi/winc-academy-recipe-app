@@ -8,10 +8,23 @@ import { HealthLabels } from './Labels/HealthLabels';
 
 export const RecipeChoice = ({ recipe, onClick }) => {
   return (
-    <Flex direction='column' p='10' bg='yellow.400'>
-      <Box>
+    <Flex
+      direction='column'
+      w='75%'
+      h='100%'
+      p='10'
+      boxShadow='dark-lg'
+      borderRadius='25px'
+      bgGradient='linear(to-b, yellow.100, orange.600)'
+      color='orange.900'
+      textAlign='center'
+    >
+      <Box position='relative'>
         <IconButton
           variant={'ghost'}
+          pos='absolute'
+          top='0'
+          left='0'
           color='blue.500'
           icon={<ArrowLeftIcon />}
           _hover={{ bg: 'black', color: 'white' }}
@@ -19,29 +32,47 @@ export const RecipeChoice = ({ recipe, onClick }) => {
           onClick={() => onClick()}
         />
       </Box>
-      <Heading size='sm'> {recipe.label}!</Heading>
-      <Box h='200px' w='100%'>
-        <Image
-          h='100%'
-          w='100%'
-          pb='10px'
-          borderTopRadius='25px'
-          src={recipe.image}
-          alt='recipe'
-        />
-      </Box>
-      <Text fontSize='sm' color='black'>
-        mealtype: {recipe.mealType}
-      </Text>
-      <Text fontSize='sm' color='black'>
-        dishtype: {recipe.dishType}
-      </Text>
-      <Text fontSize='sm' color='black'>
-        Total cookingtime {recipe.totalTime}
-      </Text>
-      <Text fontSize='sm' color='black'>
-        {recipe.yield} person
-      </Text>
+      <Heading size='lg' mb='3rem'>
+        {recipe.label}!
+      </Heading>
+      <Flex gap={5}>
+        <Box h='200px' w='400px'>
+          <Image
+            h='100%'
+            w='100%'
+            pb='10px'
+            borderTopRadius='25px'
+            src={recipe.image}
+            alt='recipe'
+          />
+        </Box>
+        <Flex direction='column' gap={3}>
+          <Flex gap={3}>
+            <Text as='b' fontSize='sm' color='black'>
+              Mealtype:
+            </Text>
+            <Text as='i'>{recipe.mealType}</Text>
+          </Flex>
+          <Flex gap={3}>
+            <Text as='b' fontSize='sm' color='black'>
+              Dish:
+            </Text>
+            <Text as='i'>{recipe.dishType}</Text>
+          </Flex>
+          <Flex gap={3}>
+            <Text as='b' fontSize='sm' color='black'>
+              Total cooking time is:
+            </Text>
+            <Text as='i'>{recipe.totalTime} minutes</Text>
+          </Flex>
+          <Flex gap={3}>
+            <Text as='b' fontSize='sm' color='black'>
+              persons:
+            </Text>
+            <Text as='i'>{recipe.yield} person</Text>
+          </Flex>
+        </Flex>
+      </Flex>
       <Box mt={5}>
         Dietlabels:
         <Flex direction='row' flexWrap='wrap' gap={2}>

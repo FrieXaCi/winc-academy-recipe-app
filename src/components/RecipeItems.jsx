@@ -1,5 +1,6 @@
 import { Flex } from '@chakra-ui/react';
 import { RecipeItem } from './RecipeItem';
+import uuid from 'react-uuid';
 
 export const RecipeItems = ({ recipes, onClick }) => {
   return (
@@ -13,11 +14,7 @@ export const RecipeItems = ({ recipes, onClick }) => {
       justifyContent='center'
     >
       {recipes.map((recipe) => (
-        <RecipeItem
-          onClick={onClick}
-          key={recipe.recipe.label}
-          recipe={recipe.recipe}
-        />
+        <RecipeItem onClick={onClick} key={uuid()} recipe={recipe.recipe} />
       ))}
     </Flex>
   );

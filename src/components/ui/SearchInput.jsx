@@ -3,8 +3,7 @@ import { Input } from '@chakra-ui/react';
 export const SearchInput = ({ onChange }) => {
   return (
     <Input
-      mt='20px'
-      w='60%'
+      w='40%'
       h='50px'
       bgGradient='linear(to-b, yellow.100, orange.600)'
       color='orange.900'
