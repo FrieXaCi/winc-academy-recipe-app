@@ -28,9 +28,9 @@ export const RadioButton = ({ value, onChange }) => {
         >
           <Text
             fontSize={{ base: '0.7rem', md: '1rem', lg: '1.5rem' }}
-            fontWeight='300'
-            color='orange.600'
-            textShadow='1px 1px black'
+            fontWeight={{ base: '500', lg: '300' }}
+            color={{ base: 'orange.900', lg: 'orange.600' }}
+            textShadow={{ lg: '1px 1px black' }}
           >
             All
           </Text>
@@ -43,9 +43,9 @@ export const RadioButton = ({ value, onChange }) => {
         >
           <Text
             fontSize={{ base: '0.7rem', md: '1rem', lg: '1.5rem' }}
-            fontWeight='300'
-            color='orange.600'
-            textShadow='1px 1px black'
+            fontWeight={{ base: '500', lg: '300' }}
+            color={{ base: 'orange.900', lg: 'orange.600' }}
+            textShadow={{ lg: '1px 1px black' }}
           >
             Pescatarian
           </Text>
@@ -58,9 +58,9 @@ export const RadioButton = ({ value, onChange }) => {
         >
           <Text
             fontSize={{ base: '0.7rem', md: '1rem', lg: '1.5rem' }}
-            fontWeight='200'
-            color='orange.600'
-            textShadow='1px 1px black'
+            fontWeight={{ base: '500', lg: '300' }}
+            color={{ base: 'orange.900', lg: 'orange.600' }}
+            textShadow={{ lg: '1px 1px black' }}
           >
             Vegetarian
           </Text>
@@ -73,9 +73,9 @@ export const RadioButton = ({ value, onChange }) => {
         >
           <Text
             fontSize={{ base: '0.7rem', md: '1rem', lg: '1.5rem' }}
-            fontWeight='300'
-            color='orange.600'
-            textShadow='1px 1px black'
+            fontWeight={{ base: '500', lg: '300' }}
+            color={{ base: 'orange.900', lg: 'orange.600' }}
+            textShadow={{ lg: '1px 1px black' }}
           >
             Vegan
           </Text>

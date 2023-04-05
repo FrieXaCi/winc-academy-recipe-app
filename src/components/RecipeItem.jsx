@@ -6,7 +6,9 @@ import {
   Card,
   CardHeader,
   CardBody,
+  Flex,
 } from '@chakra-ui/react';
+import { FaSeedling } from 'react-icons/fa';
 import { DietLabels } from './Labels/DietLabels';
 import { Cautions } from './Labels/Cautions';
 
@@ -20,10 +22,14 @@ export const RecipeItem = ({ recipe, onClick }) => {
       return 'Vegetarian';
     } else return '';
   };
-
+  const vega =
+    recipe.healthLabels.includes('Vegan') ||
+    recipe.healthLabels.includes('Vegetarian');
   return (
     <Card
       align='center'
+      justify='center'
+      gap={3}
       onClick={() => onClick(recipe)}
       as='button'
       h='500px'
@@ -41,19 +47,18 @@ export const RecipeItem = ({ recipe, onClick }) => {
         <Image
           h='100%'
           w='100%'
-          pb='10px'
           borderTopRadius='25px'
           src={recipe.image}
           alt='recipe'
         />
       </Box>
-      <CardHeader>
+      <CardHeader h='100px'>
         <Text
           fontSize={{
-            base: '0.9rem',
-            sm: '1rem',
-            md: '1.1rem',
-            lg: '1.3rem',
+            base: '0.7rem',
+            sm: '0.8rem',
+            md: '0.9rem',
+            lg: '1rem',
           }}
           color='orange.900'
         >
@@ -61,10 +66,10 @@ export const RecipeItem = ({ recipe, onClick }) => {
         </Text>
         <Heading
           fontSize={{
-            base: '0.8rem',
-            sm: '0.9rem',
-            md: '1rem',
-            lg: '1.1rem',
+            base: '0.7rem',
+            sm: '0.8rem',
+            md: '0.9rem',
+            lg: '1rem',
           }}
           p='5px'
           textAlign='center'
@@ -74,58 +79,73 @@ export const RecipeItem = ({ recipe, onClick }) => {
         </Heading>
         <Text
           fontSize={{
-            base: '0.9rem',
-            sm: '1rem',
-            md: '1.1rem',
-            lg: '1.3rem',
+            base: '0.7rem',
+            sm: '0.8rem',
+            md: '0.9rem',
+            lg: '1rem',
           }}
         >
           {recipe.dishType}
         </Text>
-        <Text
-          fontSize={{
-            base: '0.9rem',
-            sm: '1rem',
-            md: '1.1rem',
-            lg: '1.3rem',
-          }}
-          fontWeight='semibold'
-          color='green.600'
-          flexWrap='wrap'
-        >
-          {VegaLabels()}
-        </Text>
+
+        {vega ? (
+          <Flex
+            color='green.500'
+            gap={3}
+            align='center'
+            justify='center'
+            mt='5px'
+          >
+            <FaSeedling />
+            <Text
+              fontSize={{
+                base: '0.7rem',
+                sm: '0.8rem',
+                md: '0.9rem',
+                lg: '1rem',
+              }}
+              fontWeight='semibold'
+              color='green.600'
+              flexWrap='wrap'
+            >
+              {VegaLabels()}
+            </Text>
+          </Flex>
+        ) : null}
       </CardHeader>
-
-      <CardBody mt='1rem'>
-        <Box>
-          <Text
-            fontSize={{
-              base: '0.9rem',
-              sm: '1rem',
-              md: '1.1rem',
-              lg: '1.3rem',
-            }}
-          >
-            Dietlabels:
-          </Text>
-
-          <DietLabels recipe={recipe} />
-        </Box>
-        <Box>
-          <Text
-            fontSize={{
-              base: '0.9rem',
-              sm: '1rem',
-              md: '1.1rem',
-              lg: '1.3rem',
-            }}
-          >
-            Cautions:
-          </Text>
-
-          <Cautions recipe={recipe} />
-        </Box>
+      <CardBody h='150px' mt='30px'>
+        <Flex gap={10} align='flex-start' justify='center'>
+          {recipe.dietLabels.length > 0 ? (
+            <Box>
+              <Text
+                fontSize={{
+                  base: '0.7rem',
+                  sm: '0.8rem',
+                  md: '0.9rem',
+                  lg: '1rem',
+                }}
+              >
+                Dietlabels:
+              </Text>
+              <DietLabels recipe={recipe} />
+            </Box>
+          ) : null}
+          {recipe.cautions.length > 0 ? (
+            <Box>
+              <Text
+                fontSize={{
+                  base: '0.7rem',
+                  sm: '0.8rem',
+                  md: '0.9rem',
+                  lg: '1rem',
+                }}
+              >
+                Cautions:
+              </Text>
+              <Cautions recipe={recipe} />
+            </Box>
+          ) : null}
+        </Flex>
       </CardBody>
     </Card>
   );

@@ -7,13 +7,14 @@ export const Ingredients = ({ recipe }) => {
   return ingredients.map((ingredient) => {
     return (
       <Text
-        color='blue.600'
+        as='i'
+        color='yellow.900'
         key={uuid()}
         fontSize={{
-          base: '0.9rem',
-          sm: '1rem',
-          md: '1.1rem',
-          lg: '1.3rem',
+          base: '0.7rem',
+          sm: '0.8rem',
+          md: '0.9rem',
+          lg: '1rem',
         }}
       >
         <Text>{ingredient}</Text>

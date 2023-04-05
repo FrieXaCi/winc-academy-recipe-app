@@ -29,7 +29,7 @@ export const RecipesPage = () => {
             bgRepeat='no-repeat'
             bgSize='cover'
             textAlign='center'
-            fontSize={{ base: '3rem', md: '6rem', lg: '9rem' }}
+            fontSize={{ base: '3rem', sm: '4rem', md: '5rem', lg: '7rem' }}
             color='yellow.400'
             textShadow='3px 3px black'
           >

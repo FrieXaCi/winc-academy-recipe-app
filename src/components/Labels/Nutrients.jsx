@@ -39,10 +39,10 @@ export const Nutrients = ({ recipe }) => {
       align='center'
       m='0 auto'
       fontSize={{
-        base: '0.9rem',
-        sm: '1rem',
-        md: '1.1rem',
-        lg: '1.3rem',
+        base: '0.7rem',
+        sm: '0.8rem',
+        md: '0.9rem',
+        lg: '1rem',
       }}
     >
       <Flex direction='column' gap={1} m='1rem'>
