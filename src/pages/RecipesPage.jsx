@@ -15,7 +15,7 @@ export const RecipesPage = () => {
       bgImage="url('src/assets/recipe-images/background_table-_with_food.jpeg')"
       bgPosition='top'
       bgRepeat='repeat'
-      bgSize={{ base: 'contain', md: 'cover', lg: 'cover' }}
+      bgSize={{ base: 'contain', md: 'cover', lg: 'cover', xl: 'cover' }}
     >
       {userRecipe ? (
         <RecipeChoice recipe={userRecipe} onClick={setUserRecipe} />
