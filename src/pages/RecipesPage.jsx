@@ -5,8 +5,10 @@ import { SearchRecipe } from '../components/SearchRecipe';
 
 export const RecipesPage = () => {
   const greeting = 'Winc Recipe App';
+  // set state for recipes
   const [userRecipe, setUserRecipe] = useState('');
 
+  //s toggle between recipepage and recipechoice
   return (
     <Center
       w='100%'
@@ -18,8 +20,10 @@ export const RecipesPage = () => {
       bgSize={{ base: 'contain', md: 'cover', lg: 'cover', xl: 'cover' }}
     >
       {userRecipe ? (
+        //Recipe choice
         <RecipeChoice recipe={userRecipe} onClick={setUserRecipe} />
       ) : (
+        //Recipepage
         <>
           <Heading
             width='100%'

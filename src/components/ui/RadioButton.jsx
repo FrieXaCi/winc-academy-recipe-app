@@ -1,5 +1,6 @@
 import { Radio, RadioGroup, Stack, Text } from '@chakra-ui/react';
 
+// buttons to select the vegan, vegetarion and pescatarian recipes
 export const RadioButton = ({ value, onChange }) => {
   return (
     <RadioGroup

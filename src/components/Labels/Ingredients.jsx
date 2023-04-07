@@ -2,8 +2,10 @@ import { Text } from '@chakra-ui/react';
 import uuid from 'react-uuid';
 
 export const Ingredients = ({ recipe }) => {
+  // select ingredients
   const ingredients = recipe.ingredientLines;
 
+  // return each ingredient seperate
   return ingredients.map((ingredient) => {
     return (
       <Text

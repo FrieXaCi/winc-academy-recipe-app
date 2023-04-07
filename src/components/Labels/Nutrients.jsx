@@ -1,8 +1,10 @@
 import { Flex, Text } from '@chakra-ui/react';
 
 export const Nutrients = ({ recipe }) => {
+  // Select the nutrients
   const nutrients = recipe.totalNutrients;
 
+  // array to select all nutrient by label
   const nutrientsArray = Object.keys(nutrients).map((key) => {
     return nutrients[key];
   });

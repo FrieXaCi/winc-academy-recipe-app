@@ -2,8 +2,10 @@ import { Text } from '@chakra-ui/react';
 import uuid from 'react-uuid';
 
 export const DietLabels = ({ recipe }) => {
+  // select dietLabels
   const dietLabels = recipe.dietLabels;
 
+  // return each label seperate
   return dietLabels.map((dietLabel) => {
     return (
       <Text

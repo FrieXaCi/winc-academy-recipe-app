@@ -2,8 +2,9 @@ import { Text } from '@chakra-ui/react';
 import uuid from 'react-uuid';
 
 export const Cautions = ({ recipe }) => {
+  // select cautionsLabels
   const Cautions = recipe.cautions;
-
+  // return each label seperate
   return Cautions.map((caution) => {
     return (
       <Text

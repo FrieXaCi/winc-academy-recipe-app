@@ -2,6 +2,7 @@ import { Flex } from '@chakra-ui/react';
 import { RecipeItem } from './RecipeItem';
 import uuid from 'react-uuid';
 
+// collect al the recipeitem to map for searchrecipe
 export const RecipeItems = ({ recipes, onClick }) => {
   return (
     <Flex

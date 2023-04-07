@@ -13,29 +13,36 @@ export const SearchRecipe = ({ onClick }) => {
   // filter recipes
   const [filterRecipes, setFilterRecipes] = useState('all');
 
+  // function to filter recipes
   const handleFilter = (e) => {
     setFilterRecipes(e.target.value);
   };
 
   const recipeFilter = recipes.filter((recipe) => {
+    // all recipes
     if (filterRecipes === 'all') return recipe;
+    // pescatarianrecipes
     if (filterRecipes === 'pescatarian') {
       return recipe.recipe.healthLabels.includes('Pescatarian');
     }
+    // vegetarian recipes
     if (filterRecipes === 'vegetarian') {
       return recipe.recipe.healthLabels.includes('Vegetarian');
     }
+    // vegan recipes
     if (filterRecipes === 'vegan') {
       return recipe.recipe.healthLabels.includes('Vegan');
     }
   });
 
+  // to filter the recipes from searchinput
   const matchRecipes = recipeFilter.filter((recipe) => {
     return recipe.recipe.label
       .toLowerCase()
       .includes(searchField.toLowerCase());
   });
 
+  // toggle between recipeitems and searchoutput/output radionbuttons
   return (
     <Flex direction='column' alignItems='center' justify='center' w='100%'>
       <Heading
@@ -49,6 +56,7 @@ export const SearchRecipe = ({ onClick }) => {
       >
         Search for Recipes
       </Heading>
+
       <Flex
         direction='column'
         alignItems='center'
@@ -58,9 +66,11 @@ export const SearchRecipe = ({ onClick }) => {
         mt='2rem'
         boxSizing='borderbox'
       >
+        {/* searchoutput/output radionbuttons */}
         <RadioButton value={recipeFilter} onChange={handleFilter} />
         <SearchInput onChange={(e) => setSearchField(e.target.value)} />
       </Flex>
+      {/* recipeitems */}
       <RecipeItems onClick={onClick} recipes={matchRecipes} />
     </Flex>
   );

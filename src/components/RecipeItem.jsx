@@ -12,8 +12,10 @@ import { FaSeedling } from 'react-icons/fa';
 import { DietLabels } from './Labels/DietLabels';
 import { Cautions } from './Labels/Cautions';
 
+// card item for recipepage
 export const RecipeItem = ({ recipe, onClick }) => {
-  // function to show vega options
+  // to show the vegan/ vegetarian options in card
+  // and show only when it is there
   const VegaLabels = () => {
     if (recipe.healthLabels.includes('Vegan')) {
       return 'Vegan';
@@ -22,9 +24,12 @@ export const RecipeItem = ({ recipe, onClick }) => {
       return 'Vegetarian';
     } else return '';
   };
+
+  // to show icon when vegan/vegetarian and hide when not there
   const vega =
     recipe.healthLabels.includes('Vegan') ||
     recipe.healthLabels.includes('Vegetarian');
+  // card items
   return (
     <Card
       align='center'
@@ -87,7 +92,7 @@ export const RecipeItem = ({ recipe, onClick }) => {
         >
           {recipe.dishType}
         </Text>
-
+        {/*use vega and vegaLabels to hide or show vega-options */}
         {vega ? (
           <Flex
             color='green.500'
@@ -113,6 +118,7 @@ export const RecipeItem = ({ recipe, onClick }) => {
           </Flex>
         ) : null}
       </CardHeader>
+      {/* filter recipe to show label only when is there */}
       <CardBody h='150px' mt='30px'>
         <Flex gap={10} align='flex-start' justify='center'>
           {recipe.dietLabels.length > 0 ? (

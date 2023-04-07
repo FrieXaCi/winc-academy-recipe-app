@@ -1,6 +1,7 @@
 import { Input, Flex } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 
+// search input for searchrecipe
 export const SearchInput = ({ onChange }) => {
   return (
     <Flex
