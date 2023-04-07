@@ -101,7 +101,20 @@ export const RecipeItem = ({ recipe, onClick }) => {
             justify='center'
             mt='5px'
           >
-            <FaSeedling />
+            <FaSeedling
+              w={{
+                base: '0.5rem',
+                sm: '0.8rem',
+                md: '0.9rem',
+                lg: '1rem',
+              }}
+              h={{
+                base: '0.5rem',
+                sm: '0.8rem',
+                md: '0.9rem',
+                lg: '1rem',
+              }}
+            />
             <Text
               fontSize={{
                 base: '0.7rem',
