@@ -14,7 +14,7 @@ export const RecipesPage = () => {
       w='100%'
       h='100%'
       flexDir='column'
-      bgImage="url('./src/assets/recipe-images/background_table-_with_food.jpeg')"
+      bgImage="url('./assets/recipe-images/background_table-_with_food.jpeg')"
       bgPosition='top'
       bgRepeat='repeat'
       bgSize={{ base: 'contain', md: 'cover', lg: 'cover', xl: 'cover' }}
