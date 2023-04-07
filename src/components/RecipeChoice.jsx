@@ -157,7 +157,7 @@ export const RecipeChoice = ({ recipe, onClick }) => {
           gap={5}
           m='10px auto'
         >
-          <Box w='50%'>
+          <Box w={{ md: '50%', lg: '50%' }}>
             <Text as='b' color='orange.900'>
               Healthlabels:
             </Text>
