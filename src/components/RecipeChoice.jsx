@@ -153,6 +153,7 @@ export const RecipeChoice = ({ recipe, onClick }) => {
           direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }}
           align='flex-start'
           justify='flex-start'
+          textAlign='left'
           gap={5}
           m='10px auto'
         >
